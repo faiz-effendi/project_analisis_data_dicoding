@@ -5,10 +5,17 @@
 mkdir project_akhir
 cd project_akhir
 python -m venv venv
+venv\Scripts\activate
 pip install -r requirements.txt
+```
+
+## Run Jupyter Notebook
+```
+jupyter-notebook .
 ```
 
 ## Run Streamlit Dashboard
 ```
-streamlit run ./dashboard/dashboard.py
+cd ./dashboard
+streamlit run dashboard.py
 ```
