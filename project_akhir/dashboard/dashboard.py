@@ -31,21 +31,21 @@ with st.container():
 
   fig, ax = plt.subplots(figsize=(20, 10))
 
-  sns.barplot(y='casual', x='season', data=season_to_total_df.sort_values(by='casual', ascending=False), hue='season',palette=colors, ax=ax)
+  sns.barplot(y='casual', x='season', data=season_to_total_df.sort_values(by='casual', ascending=False), hue='season', palette=colors, legend=False,ax=ax)
   ax.set_ylabel(None)
   ax.set_xlabel(None)
   ax.set_title("Peminjaman oleh pengguna casual", loc="center", fontsize=32)
   ax.tick_params(axis ='x', labelsize=24)
   st.pyplot(fig)
 
-  sns.barplot(y='registered', x='season', data=season_to_total_df.sort_values(by='registered', ascending=False), hue='season', palette=colors, ax=ax)
+  sns.barplot(y='registered', x='season', data=season_to_total_df.sort_values(by='registered', ascending=False), hue='season', palette=colors, legend=False,ax=ax)
   ax.set_ylabel(None)
   ax.set_xlabel(None)
   ax.set_title("Peminjaman oleh pengguna terdaftar", loc="center", fontsize=32)
   ax.tick_params(axis ='x', labelsize=24)
   st.pyplot(fig)
 
-  sns.barplot(y='total_book', x='season', data=season_to_total_df.sort_values(by='total_book', ascending=False), hue='season', palette=colors, ax=ax)
+  sns.barplot(y='total_book', x='season', data=season_to_total_df.sort_values(by='total_book', ascending=False), hue='season', palette=colors, legend=False, ax=ax)
   ax.set_ylabel(None)
   ax.set_xlabel(None)
   ax.set_title("Peminjaman Total", loc="center", fontsize=32)
@@ -65,7 +65,8 @@ with st.container():
       y='total_book',
       data=temp_to_total_df.sort_values(by='total_book', ascending=False),
       hue='total_book',
-      palette = colors[::-1]
+      palette = colors[::-1],
+      legend=False
   )
 
   ax.set_title('Number of Total Order Based on Temp Type', loc='center', fontsize=32)
